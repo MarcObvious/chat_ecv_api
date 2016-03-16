@@ -1,6 +1,6 @@
 # chat_ecv_api
-Simple NodeJS API framework that connects to twitter and store information on a mongo database using mongojs.
-That information can be recovered through api calls. 
+Simple NodeJS API framework that connects to twitter storing information, like tweets or trends by country, on a mongo database using mongojs.
+That information can be recovered through API calls. 
 
 ### Live example
 - `http://marcObvious.com:3000/api/play/`
