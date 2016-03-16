@@ -1,0 +1,47 @@
+{
+  "name": "ecv_chat_api",
+  "version": "0.0.1",
+  "description": "Basic apir",
+  "main": "server.js",
+  "dependencies": {
+    "async": "^1.4.2",
+    "body-parser": "^1.13.3",
+    "colors": "^0.6.2",
+    "crypto": "0.0.3",
+    "express": "^4.13.3",
+    "jade": "^1.11.0",
+    "jsonwebtoken": "^5.0.5",
+    "lodash": "^3.10.1",
+    "method-override": "^2.3.5",
+    "moment": "^2.10.6",
+    "mongojs": "^2.3.0",
+    "morgan": "^1.6.1",
+    "nodemon": "^0.7.10",
+    "request-promise": "^1.0.1",
+    "serve-favicon": "^2.3.0",
+    "twitter": "^1.2.5"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/krainet/KRNodeFramework.git"
+  },
+  "keywords": [
+    "node",
+    "api",
+    "express",
+    "orm",
+    "angularjs",
+    "kickstarter"
+  ],
+  "author": "Marc Mateu",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/"
+  },
+  "homepage": "https://github.com/krainet/KRNodeFramework#readme"
+}
