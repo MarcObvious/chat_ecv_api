@@ -3,7 +3,7 @@ Simple NodeJS API framework that connects to twitter and store information on a 
 That information can be recovered through api calls. 
 
 ### Live example
-- `http://marcObvious.com/api/play/`
+- `http://marcObvious.com:3000/api/play/`
 
 ### Getting it up and running
 #### You will need mongodb running!
