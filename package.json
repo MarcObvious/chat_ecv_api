@@ -28,11 +28,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/krainet/KRNodeFramework.git"
+    "url": "git+https://github.com/MarcObvious/chat_ecv_api.git"
   },
   "keywords": [
     "node",
     "api",
+    "mongojs",
     "express",
     "orm",
     "angularjs",
@@ -43,5 +44,5 @@
   "bugs": {
     "url": "https://github.com/"
   },
-  "homepage": "https://github.com/krainet/KRNodeFramework#readme"
+  "homepage": "https://github.com/MarcObvious/chat_ecv_api"
 }

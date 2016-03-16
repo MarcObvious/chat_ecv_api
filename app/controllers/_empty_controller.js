@@ -1,16 +1,6 @@
-/**
- * Created by ramon on 21/10/15.
- */
-
-/**
- * Created by ramon on 21/10/15.
- * APP CONFIG & VERSIONING
- */
-
 var _               = require('lodash');
 var helpers         = require('./../helpers/responseHelper');
 var settings        = require('../../config/settings');
-var models          = require('../models');
 
 var controller_name = 'SET_CONTROLLER_NAME';
 
