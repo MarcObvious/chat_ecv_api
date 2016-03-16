@@ -12,7 +12,7 @@ That information can be recovered through API calls.
 2. Run `npm install`
 3. Create config/settings.js from the template config/settings.dist.js as you like
 3. Run `node server.js` in order to start the api
-4. Run `node tasks\populateTwitter.js` in order to start populating your mongo database with 
+4. Run `node tasks\populateTwitter.js` in order to start populating your mongo database with Twitter trends and tweets 
 
 ## Originaly forked from 
 -`https://github.com/krainet/KRNodeFramework`
