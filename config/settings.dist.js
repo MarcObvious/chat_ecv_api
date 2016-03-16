@@ -7,8 +7,14 @@ var settings = {
     logsdir     : __dirname + '/../logs/access.log',
 
     api_prefix  : '/api',
+
+    //Put here you mongo database!
+    mongo: {
+        db: '',
+        collection: ''
+    },
     
-    //Put here you credentials!
+    //Put here you twitter credentials!
     twitter: {
         TWITTER_CONSUMER_KEY: '',
         TWITTER_CONSUMER_SECRET: '',

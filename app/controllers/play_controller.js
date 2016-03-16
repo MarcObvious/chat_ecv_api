@@ -1,11 +1,11 @@
 var _               = require('lodash');
 var helpers         = require('./../helpers/responseHelper');
 var settings        = require('../../config/settings');
-var env             = require('../../config/settings')['twitter'];
+var mon             = require('../../config/settings')['mongo'];
 var async           = require('async');
 var colors          = require('colors');
 var mongojs         = require('mongojs');
-var db              = mongojs('ecv_twitter',['ecv_twitter']);
+var db              = mongojs(mon.db,[mon.coll]);
 
 db.on('error',function() {
     console.log('Error connecting to server...');
@@ -15,7 +15,7 @@ var controller_name = 'play';
 
 module.exports = {
     list: function (req, res, next) {
-        db.ecv_twitter.find().limit(100).sort({created_at:1}).toArray( function (err, docs) {
+        db[mon.coll].find().limit(100).sort({created_at:1}).toArray( function (err, docs) {
             docs.forEach(function (doc) {
                 doc.tweets = JSON.parse(doc.tweets);
             });
@@ -26,7 +26,7 @@ module.exports = {
     create: function (req, res, next) {
         var params = _.pick(req.body, 'id', 'text', 'topic', 'user_name');
 
-        db.ecv_twitter.find({country: params.id, name: params.topic}).sort({created_at:1}).limit(1).toArray( function (err, doc) {
+        db[mon.coll].find({country: params.id, name: params.topic}).sort({created_at:1}).limit(1).toArray( function (err, doc) {
             //console.log(doc);
             if (doc[0]){
                 doc[0].tweets = JSON.parse(doc[0].tweets);
@@ -35,7 +35,7 @@ module.exports = {
                     text: params.text,
                     created_at: new Date()
                 });
-                db.ecv_twitter.findAndModify({
+                db[mon.coll].findAndModify({
                     query: {_id: doc[0]._id},
                     update: {$set: { tweets: JSON.stringify(doc[0].tweets)} },
                     new: true
@@ -55,7 +55,7 @@ module.exports = {
     get: function (req, res, next) {
         var id = req.params.id ? req.params.id : null;
         //console.log(id);
-        db.ecv_twitter.find({country: id}).sort({created_at:1}).limit(4).toArray( function (err, docs) {
+        db[mon.coll].find({country: id}).sort({created_at:1}).limit(4).toArray( function (err, docs) {
             docs.forEach(function (doc) {
                 doc.tweets = JSON.parse(doc.tweets);
             });

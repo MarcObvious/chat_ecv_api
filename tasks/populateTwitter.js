@@ -1,11 +1,11 @@
 var _               = require('lodash');
-var settings        = require('../config/settings');
 var env             = require('../config/settings')['twitter'];
+var mon             = require('../config/settings')['mongo'];
 var async           = require('async');
 var colors          = require('colors');
 var Twitter         = require('twitter');
 var mongojs         = require('mongojs');
-var db              = mongojs('ecv_twitter',['ecv_twitter']);
+var db              = mongojs(mon.db,[mon.coll]);
 
 db.on('error',function() {
     console.log('Error connecting to server...');
@@ -20,12 +20,6 @@ var client = new Twitter({
 });
 
 //Paisos amb els que jugarem
-
-/*
- * Spain:	23424950
- * Barcelona: 753692
- * France: 	23424819
- */
 var countries = [
     {name: 'WorldWide', value:1 },
     {name: 'Spain', value: 23424950},
@@ -59,7 +53,7 @@ var getTrends = function(id, country) {
                     });
                 });
 
-                db.ecv_twitter.insert({
+                db[mon.coll].insert({
                     country: country,
                     country_id: id,
                     name: trend['name'],
